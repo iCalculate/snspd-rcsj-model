@@ -214,20 +214,3 @@ options are
 }
 ```
 
-## Output
-
-Simulation data is stored in the HDF5 format and can be read using for example 
-[Python](https://docs.h5py.org/en/latest/quick.html) or [Matlab](https://se.mathworks.com/help/matlab/ref/h5read.html). 
-Another good tool to quickly go through the data is HDF Compass which can be installed on Debian/Ubuntu using
-
-```shell script
-sudo apt install hdf-compass
-```
-
-The saved data is structured with HDF5 datasets as follows:
-
-- `bias_current` - Contains the bias current going into the SNSPD every step.
-- `voltage` - The voltage over the SNSPD.
-- `time` - The time in dimensionless units since the start of the simulation.
-- `phase_slips` - Information where phase slips occur.
-- `json_config` - The configuration file used to run the simulation.
