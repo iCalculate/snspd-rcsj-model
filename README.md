@@ -4,11 +4,10 @@ A one-dimensional SNSPD model using the resistively and capacitively shunted Jos
 
 ## Installation
 
-The easiest way to get started is to download the binary from github using
+The easiest way to get started is to download the binary (Releases_snspd_rcsj_v_1_0_0) from github
 
 ```shell script
-wget https://github.com/KTH-condensed-matter/snspd-rcsj/releases/latest/download/release.zip
-unzip release.zip
+https://github.com/iCalculate/snspd-rcsj-model/releases/tag/RCSJ
 ```
 
 To start the simulation then run
@@ -214,3 +213,20 @@ options are
 }
 ```
 
+## Output
+
+Simulation data is stored in the HDF5 format and can be read using for example 
+[Python](https://docs.h5py.org/en/latest/quick.html) or [Matlab](https://se.mathworks.com/help/matlab/ref/h5read.html). 
+Another good tool to quickly go through the data is HDF Compass which can be installed on Debian/Ubuntu using
+
+```shell script
+sudo apt install hdf-compass
+```
+
+The saved data is structured with HDF5 datasets as follows:
+
+- `bias_current` - Contains the bias current going into the SNSPD every step.
+- `voltage` - The voltage over the SNSPD.
+- `time` - The time in dimensionless units since the start of the simulation.
+- `phase_slips` - Information where phase slips occur.
+- `json_config` - The configuration file used to run the simulation.
