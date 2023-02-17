@@ -1,0 +1,73 @@
+{
+  "settings": {
+    "output": "data/detection/2us-{:%Y-%m-%d_%H%M%S}.h5",
+    "savePhaseSlips": true
+  },
+  "parameters": {
+    "boundaryCondition": "voltage",
+    "maxSteps": 10e6,
+    "average": 1,
+    "size": 400,
+    "dt": 0.01,
+    "q": 1.1107,
+    "c0": 0.01,
+    "vg": 1,
+    "nl": 0.0058,
+    "r": 1,
+    "i": 0.8,
+    "ib": 0.8,
+    "vb": 160,
+    "rt": 200,
+    "rs": 0.125,
+    "cs": 2000,
+    "ic": {
+      "value": 1
+    },
+    "x": {
+      "stationaryPhase": true
+    },
+    "v": 0,
+    "rqp": 1000
+  },
+  "updates": [{
+    "start": 1000000,
+    "end": 1000100,
+    "values": {
+      "ic": [{
+        "index": 200,
+        "from": 1,
+        "to": 0.1
+      }]
+    }
+  }, {
+    "start": 1000100,
+    "end": 1000200,
+    "values": {
+      "ic": [{
+        "index": 200,
+        "from": 0.1,
+        "to": 1
+      }]
+    }
+  },{
+    "start": 2000000,
+    "end": 2000100,
+    "values": {
+      "ic": [{
+        "index": 200,
+        "from": 1,
+        "to": 0.1
+      }]
+    }
+  }, {
+    "start": 2000100,
+    "end": 2000200,
+    "values": {
+      "ic": [{
+        "index": 200,
+        "from": 0.1,
+        "to": 1
+      }]
+    }
+  }]
+}
